@@ -1,0 +1,83 @@
+<html>
+<head>
+	<title>
+		Jquery Tasks
+	</title>
+
+</head>
+<body>
+	<table align="center">
+
+		<tr>
+		  <td>
+		  </td>
+		  <td align="center">
+		      <h2>Prime number checking</h2>
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+		<tr>
+			<td>
+				Enter Any Number
+			</td>
+			<td>
+				<input type="text" id="txtnum">
+			</td>
+			<td>
+				<span id="error"> </span>
+			</td>
+		</tr>
+		<tr>
+		  <td>
+		  </td>
+		  <td align="center">
+		     <input type="submit" value="Check" id="check">
+		  </td>
+		  <td>
+		  </td>
+		</tr>
+	</table>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	 <script src="./jqueryapp.js">
+	 $(document).ready(function()
+	 {
+	     // storing number in variable
+         var number= parseInt($("#txtnum").val());
+          $("#txtnum").keypress(function (e) {
+
+          if (e.which >= 48 || e.which <= 57)
+           {
+
+           };
+          else
+            {
+               $("#error").html("Please enter only number number").show().fadeOut("slow");
+               return false;
+            }
+      });
+     $("#check").click(function()
+     {
+        for (var i = 1; i < number; i++)
+              {
+          	    if (number%i==0)
+          	     {
+          	        	res++;
+          	     };
+              };
+
+             if (res==2)
+              {
+          	    $("#error").html("Entered number is a prime number").show().fadeOut("slow");
+              };
+             else
+              {
+                $("#error").html("Entered number is not a prime number").show().fadeOut("slow");
+                return false;
+              };
+     });
+
+	 </script>
+</body>
+</html>
